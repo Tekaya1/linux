@@ -104,23 +104,7 @@ fdisk /dev/sdb
 
 ---
 
-## 6. Ajout du Fichier à Git
 
-Si tu veux ajouter ce fichier à Git et le pousser sur un dépôt distant, utilise les commandes suivantes :
-
-1. **Créer et ouvrir le fichier :**
-```sh
-nano partitioning.md
-```
-   - Colle le contenu du fichier.
-   - Enregistre avec `CTRL + X`, `Y`, puis `ENTER`.
-
-2. **Ajouter le fichier à Git :**
-```sh
-git add partitioning.md
-git commit -m "Ajout du guide de partitionnement"
-git push origin main  # Remplace "main" par le nom de ta branche si nécessaire
-```
 
 ---
 
