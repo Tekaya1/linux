@@ -103,12 +103,16 @@ fdisk /dev/sdb
    - Appuyer sur `w` pour enregistrer les modifications et quitter.
 
 ---
+<<<<<<< HEAD
 ## 6. Creation d'une partition swap:
 1. Lancer la commande :
 ```sh
 fdisk /dev/sdb
 ```
  
+=======
+
+>>>>>>> 4055dc6e2071b75d946a75ea76f1349509672cc0
 
 
 ---
