@@ -1,5 +1,12 @@
 # Gestion des Périphériques de Stockage sous Linux
+[Visit Another Repository](#){: .btn .btn-primary }
 
+<!-- OR using HTML for more customization -->
+<a href="https://github.com/username/repository-name" target="_blank">
+  <button style="background-color: #2ea44f; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+    TP-LVM-1
+  </button>
+</a>
 ## Afficher les Périphériques Blocs
 ```bash
 lsblk
