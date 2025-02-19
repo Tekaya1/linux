@@ -237,11 +237,64 @@ fdisk /dev/sdb
 # Puis taper d, choisir la partition et w pour sauvegarder
 ```
 
+## 🔹 **Augmentation et Réduction de la Taille d'un Volume Logique**
+### 1️⃣ Augmenter la Taille d'un Volume Logique
+#### 📌 Cas 1 : Espace libre disponible dans le VG
+```bash
+lvextend -L +100M /dev/vg/lv1 -r
+lvextend -L 500M /dev/vg/lv1 -r
+lvextend -L +25 /dev/vg/lv1 -r
+lvextend -L 125 /dev/vg/lv1 -r
+```
+Sinon :
+```bash
+lvresize -L +100M /dev/vg/lv1 -r
+```
+Pour XFS :
+```bash
+xfs_growfs /dev/vg/lv1
+```
+Pour EXT4 :
+```bash
+resize2fs /dev/vg/lv1
+```
+
+#### 📌 Cas 2 : Pas d’espace libre dans le VG
+1. Créer une nouvelle partition :
+```bash
+fdisk /dev/sdc
+```
+- `n` (nouvelle partition)
+- `Enter` (valeurs par défaut)
+- `Enter`
+- `Enter`
+- `+104M`
+- `t` puis `8e`
+- `w` pour sauvegarder
+
+2. Créer un volume physique :
+```bash
+pvcreate /dev/sdc1
+```
+3. Étendre le groupe de volumes :
+```bash
+vgextend vg /dev/sdc1
+```
+4. Augmenter la taille du volume logique :
+```bash
+lvresize -L +100M /dev/vg/lv1 -r
+```
+
+### 2️⃣ Réduction de la Taille d’un Volume Logique
+```bash
+lvreduce -L -100M /dev/vg/lv1 -r
+lvreduce -L 300M /dev/vg/lv1 -r
+lvreduce -L -25 /dev/vg/lv1 -r
+lvreduce -L 75 /dev/vg/lv1 -r
+```
+
 ---
 
 ✅ **Fin du Guide sur la Gestion des Disques et des Volumes Logiques sous Linux** ✅
 
-
----
-
-🚀 Tout est maintenant bien organisé et optimisé !
+🚀 **Tout est maintenant bien organisé et optimisé !**
