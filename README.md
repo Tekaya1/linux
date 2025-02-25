@@ -300,3 +300,88 @@ lvreduce -L 75 /dev/vg/lv1 -r
 ✅ **Fin du Guide sur la Gestion des Disques et des Volumes Logiques sous Linux** ✅
 
 🚀 **Tout est maintenant bien organisé et optimisé !**
+## 🚀 # Stratis
+
+### Installation
+```bash
+dnf install stratisd stratis-cli
+```
+
+### Démarrage du service stratisd
+```bash
+systemctl start stratisd stratis-cli  # enabled au cours de la session
+systemctl enable stratisd stratis-cli  # enabled anytime
+systemctl enable --now stratisd  # enable en real time
+```
+
+### Formater le disque
+```bash
+wipefs -a /dev/sdb
+```
+
+### Création d'un pool Stratis
+```bash
+stratis pool create pool1 /dev/sdb /dev/sdc
+```
+
+### Ajout d'un disque pour le stockage de données
+```bash
+stratis pool add-data pool1 /dev/sdd
+```
+
+### Création d'une première cache
+```bash
+stratis pool init-cache pool1 /dev/sdc
+```
+
+### Ajout d'une autre cache
+```bash
+stratis pool add-cache pool1 /dev/sde
+```
+
+### Vérification
+```bash
+stratis pool list
+stratis blockdev list
+```
+
+### Création d'un filesystem
+```bash
+stratis filesystem create pool1 fs1
+stratis filesystem list
+```
+
+### Montage
+#### Temporaire
+```bash
+mount /dev/stratis/pool1/fs1 /mnt
+```
+
+#### Permanent
+```bash
+vim /etc/fstab
+```
+Ajouter :
+```bash
+UUID="XXXXXXXXXXXXXXX-XXXXXXX-XXXXX" /mnt xfs defaults x-systemd.requires=stratisd.service 0 0
+```
+Puis appliquer :
+```bash
+mount -a
+```
+
+### Création d'un snapshot
+```bash
+stratis filesystem snapshot pool1 fs1 snapshot1  # Pour sauvegarder une image de backup
+```
+
+### Suppression des couches Stratis
+```bash
+umount /dev/stratis/pool1/fs1
+```
+Effacer la config de `/etc/fstab`, puis :
+```bash
+stratis fs destroy pool1 snapshot1
+stratis fs destroy pool1 fs1
+stratis pool destroy pool1
+```
