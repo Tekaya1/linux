@@ -385,3 +385,135 @@ stratis fs destroy pool1 snapshot1
 stratis fs destroy pool1 fs1
 stratis pool destroy pool1
 ```
+
+## I) Stockage distant NFS:
+
+### 1) Serveur NFS:
+#### Installation:
+```bash
+dnf install nfs-utils
+```
+#### Démarrage et activation du service:
+```bash
+systemctl start nfs-server
+systemctl enable nfs-server
+```
+#### Configuration du firewall pour autoriser quelques services:
+```bash
+firewall-cmd --add-service={rpc-bind,nfs,mountd} --permanent
+firewall-cmd --reload
+```
+#### Création de partage NFS:
+```bash
+mkdir /partage
+vim /etc/exports
+```
+Ajouter cette ligne :
+```
+/partage *(rw,no_root_squash)
+```
+Puis redémarrer le service :
+```bash
+systemctl restart nfs-server
+```
+
+### 2) Côté client:
+#### Installation:
+```bash
+dnf install nfs-utils
+```
+#### Montage:
+- **Temporaire** :
+```bash
+mkdir /rep1
+mount @IPserveur:/partage /rep1
+```
+- **Permanent** :
+```bash
+vim /etc/fstab
+```
+Ajouter cette ligne :
+```
+@ip:/partage /rep1 xfs _netdev 0 0
+```
+Puis appliquer :
+```bash
+mount -a
+```
+
+### 3) Côté client - Autofs:
+#### Installation:
+```bash
+dnf install autofs
+```
+#### Démarrage et activation du service:
+```bash
+systemctl start autofs
+systemctl enable autofs
+```
+#### Mappage Direct:
+```bash
+vim /etc/auto.ticR
+```
+Ajouter cette ligne :
+```
+/rep1 @IP:/partage
+```
+```bash
+vim /etc/auto.master
+```
+Ajouter cette ligne :
+```
+/- /etc/auto.ticR
+```
+Puis redémarrer le service :
+```bash
+systemctl restart autofs
+```
+#### Mappage Indirect:
+```bash
+vim /etc/auto.master
+```
+Ajouter cette ligne :
+```
+/rep1 /etc/auto.ticR
+```
+```bash
+vim /etc/auto.ticR
+```
+Ajouter cette ligne :
+```
+rep2 -rw 192.168.232.129:/partage
+```
+
+### 4) Utilisation de autofs dans le montage des répertoires personnels:
+#### Côté Serveur:
+- **Info** : utilisateur `rayen`, `uid=3564`, `home=/server`
+```bash
+useradd -u 3564 -d /server/rayen rayen -b /server
+vim /etc/exports
+```
+Ajouter cette ligne :
+```
+/server *(rw,no_root_squash)
+```
+Puis redémarrer le service :
+```bash
+systemctl restart nfs-server
+```
+#### Côté Client:
+```bash
+useradd rayen -u 3564 -d /client/rayen -M
+vim /etc/auto.master
+```
+Ajouter cette ligne :
+```
+/client /etc/auto.rayen
+```
+```bash
+vim /etc/auto.rayen
+```
+Ajouter cette ligne :
+```
+rayen -rw @ip_reseau:/server/rayen
+```
