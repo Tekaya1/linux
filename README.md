@@ -21,7 +21,6 @@ Each link below leads to a dedicated GitHub repository with step-by-step exercis
 
 | 🔢 | 📘 Lesson Title                                           | 🔗 GitHub Link |
 |----|-----------------------------------------------------------|----------------|
-| 1️⃣ | LAB-NFS **NFS**                 | [📁 View](https://github.com/Tekaya1/Lab_NFS) |
 | 1️⃣ | LAB1-LVM **LVM**                | [📁 View](https://github.com/Tekaya1/Lab-LVM-1) |
 | 2️⃣ | LAB-NFS **NFS**                 | [📁 View](https://github.com/Tekaya1/Lab_NFS) |
 ---
