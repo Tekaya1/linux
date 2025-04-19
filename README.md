@@ -14,6 +14,7 @@ Each link below leads to a dedicated GitHub repository with step-by-step exercis
 | 2️⃣ | Gestion des Volumes Logiques (`LVM`)  **LVM**            | [📁 View](https://github.com/Tekaya1/LVM) |
 | 3️⃣ | Configuration des systèmes de fichiers **Stratis**       | [📁 View](https://github.com/Tekaya1/STRATIS) |
 | 4️⃣ | Stockage distant **NFS**                                 | [📁 View](https://github.com/Tekaya1/NFS) |
+| 5️⃣ | Httpd et configuration conteneurs **HTTPD & PODMAN**     | [📁 View](https://github.com/Tekaya1/Httpd-et-gestions-des-conteneurs) |
 
 ---
 ## 📚 Available Exercices 
@@ -21,6 +22,7 @@ Each link below leads to a dedicated GitHub repository with step-by-step exercis
 | 🔢 | 📘 Lesson Title                                           | 🔗 GitHub Link |
 |----|-----------------------------------------------------------|----------------|
 | 1️⃣ | LAB1-LVM **LVM**                | [📁 View](https://github.com/Tekaya1/Lab-LVM-1) |
+| 2️⃣ | LAB-NFS **NFS**                 | [📁 View](https://github.com/Tekaya1/Lab_NFS) |
 ---
 
 ## 💡 Tips
