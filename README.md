@@ -12,18 +12,18 @@ Each link below leads to a dedicated GitHub repository with step-by-step exercis
 |----|-----------------------------------------------------------|----------------|
 | 1️⃣ | Gestion des Stockages (`fdisk`) **FDISK**                | [📁 View](https://github.com/Tekaya1/GDS) |
 | 2️⃣ | Gestion des Volumes Logiques (`LVM`)  **LVM**            | [📁 View](https://github.com/Tekaya1/LVM) |
-| 3️⃣ | Configuration des systèmes de fichiers **Stratis**       | [📁 View](https://github.com/Tekaya1/STRATIS) |
-| 4️⃣ | Stockage distant **NFS**                                 | [📁 View](https://github.com/Tekaya1/NFS) |
-| 5️⃣ | Httpd et configuration conteneurs **HTTPD & PODMAN**     | [📁 View](https://github.com/Tekaya1/Httpd-et-gestions-des-conteneurs) |
+| 3️⃣ | Configuration des systèmes de fichiers  **Stratis**      | [📁 View](https://github.com/Tekaya1/STRATIS) |
+| 4️⃣ | Networking **Networking**                                | [📁 View](https://github.com/Tekaya1/Networking) |
+| 5️⃣ | Stockage distant **NFS**                                 | [📁 View](https://github.com/Tekaya1/NFS) |
+| 6️⃣ | Httpd et configuration conteneurs **HTTPD & PODMAN**     | [📁 View](https://github.com/Tekaya1/Httpd-et-gestions-des-conteneurs) |
 
----
 ## 📚 Available Exercices 
 
 | 🔢 | 📘 Lesson Title                                           | 🔗 GitHub Link |
 |----|-----------------------------------------------------------|----------------|
-| 1️⃣ | LAB-NFS **NFS**                 | [📁 View](https://github.com/Tekaya1/Lab_NFS) |
-| 1️⃣ | LAB1-LVM **LVM**                | [📁 View](https://github.com/Tekaya1/Lab-LVM-1) |
-| 2️⃣ | LAB-NFS **NFS**                 | [📁 View](https://github.com/Tekaya1/Lab_NFS) |
+| 1️⃣ | LAB-NFS **NFS**                                          | [📁 View](https://github.com/Tekaya1/Lab_NFS) |
+| 2️⃣ | LAB1-LVM **LVM**                                         | [📁 View](https://github.com/Tekaya1/Lab-LVM-1) |
+| 3️⃣ | LAB-Container **Containers**                              | [📁 View](https://github.com/Tekaya1/Lab-Container) |
 ---
 
 ## 💡 Tips
