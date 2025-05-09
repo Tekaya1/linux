@@ -24,7 +24,8 @@ Each link below leads to a dedicated GitHub repository with step-by-step exercis
 |----|-----------------------------------------------------------|----------------|
 | 1️⃣ | LAB-NFS **NFS**                                          | [📁 View](https://github.com/Tekaya1/Lab_NFS) |
 | 2️⃣ | LAB1-LVM **LVM**                                         | [📁 View](https://github.com/Tekaya1/Lab-LVM-1) |
-| 3️⃣ | LAB-Container **Containers**                              | [📁 View](https://github.com/Tekaya1/Lab-Container) |
+| 3️⃣ | LAB-Container **Containers**                             | [📁 View](https://github.com/Tekaya1/Lab-Container) |
+| 4️⃣ | LAB-Planification **Task Scheduling**                    | [📁 View](https://github.com/Tekaya1/Lab-Planification) |
 ---
 
 ## 💡 Tips
