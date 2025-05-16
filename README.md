@@ -17,6 +17,7 @@ Each link below leads to a dedicated GitHub repository with step-by-step exercis
 | 5️⃣ | Stockage distant **NFS**                                 | [📁 View](https://github.com/Tekaya1/NFS) |
 | 6️⃣ | Httpd et configuration conteneurs **HTTPD & PODMAN**     | [📁 View](https://github.com/Tekaya1/Httpd-et-gestions-des-conteneurs) |
 | 7️⃣ | Planification des tâches **Task Scheduling**             | [📁 View](https://github.com/Tekaya1/Planification-des-taches) |
+| 8️⃣ | Compression et archivage **Compression**                 | [📁 View](https://github.com/Tekaya1/compression) |
 
 ## 📚 Available Exercices 
 
