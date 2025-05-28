@@ -18,6 +18,8 @@ Each link below leads to a dedicated GitHub repository with step-by-step exercis
 | 6️⃣ | Httpd et configuration conteneurs **HTTPD & PODMAN**     | [📁 View](https://github.com/Tekaya1/Httpd-et-gestions-des-conteneurs) |
 | 7️⃣ | Planification des tâches **Task Scheduling**             | [📁 View](https://github.com/Tekaya1/Planification-des-taches) |
 | 8️⃣ | Compression et archivage **Compression**                 | [📁 View](https://github.com/Tekaya1/compression) |
+| 9️⃣ | Gestion des paquets RPM, DNF et Dépôts                   | [📁 View](https://github.com/Tekaya1/Gestion_Paquets) |
+
 
 ## 📚 Available Exercices 
 
